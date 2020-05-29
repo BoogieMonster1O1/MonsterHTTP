@@ -18,6 +18,7 @@ package io.github.boogiemonster1o1;
 
 import com.sun.net.httpserver.HttpServer;
 
+import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,15 +29,20 @@ import java.util.logging.Logger;
  * Nothing too fancy going on
  */
 public class MonsterHTTP {
+    /**
+     * @author BoogieMonster1O1
+     * @param args Nothing but a required parameter
+     * This main method starts the server in a <code>try..catch</code> block to avoid errors
+     */
     public static void main(String[] args) {
         try {
-            HttpServer server = HttpServer.create(new InetSocketAddress(80),0);
-            server.createContext("/",new Handler());
+            HttpServer server = HttpServer.create(new InetSocketAddress(80), 0);
+            server.createContext("/", new Handler());
             server.setExecutor(null);
             server.start();
             Logger log = Logger.getAnonymousLogger();
-            log.log(Level.INFO,"Started Server on port 80");
-        } catch (Exception e) {
+            log.log(Level.INFO, "Started Server on port 80");
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
