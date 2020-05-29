@@ -22,6 +22,11 @@ import java.net.InetSocketAddress;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * @author BoogieMonster1O1
+ * This is the main class. The HTTP Server starts from here. This is just an implementation of {@link com.sun.net.httpserver.HttpServer} <br>
+ * Nothing too fancy going on
+ */
 public class MonsterHTTP {
     public static void main(String[] args) {
         try {
