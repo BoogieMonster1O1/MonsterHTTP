@@ -26,7 +26,6 @@ public class Handler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) {
         String response = "<html><h1>Response</h1></html>";
-        System.out.println(System.getProperty("user.dir"));
         try {
             exchange.sendResponseHeaders(200,response.getBytes().length);
             OutputStream writer = exchange.getResponseBody();
