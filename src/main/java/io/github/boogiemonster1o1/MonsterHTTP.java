@@ -27,7 +27,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MonsterHTTP {
-
     public static void main(String[] args) {
         try {
             HttpServer server = HttpServer.create(new InetSocketAddress(80),0);
@@ -40,21 +39,4 @@ public class MonsterHTTP {
             e.printStackTrace();
         }
     }
-
-    static class Handler implements HttpHandler{
-        @Override
-        public void handle(HttpExchange exchange) {
-            String response = "<html><h1>Response</h1></html>";
-            try {
-                exchange.sendResponseHeaders(200,response.getBytes().length);
-                OutputStream writer = exchange.getResponseBody();
-                writer.write(response.getBytes());
-                writer.flush();
-                writer.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
 }
