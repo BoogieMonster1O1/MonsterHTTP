@@ -25,9 +25,13 @@ import java.io.OutputStream;
 /**
  * @author BoogieMonster1O1
  * This class handles the http request by returning an html string. <br>
- * Instead of using an html string, a file can be read into a list which can then be converted into a string, which can be used as a much better response. <br>
+ * Instead of using an html string, a file can be read into a list which can then be converted into a string, which can be used as a much better response.
  */
 public class Handler implements HttpHandler {
+    /**
+     * @param exchange Handles the transfer of data
+     * @author BoogieMonster1O1
+     */
     @Override
     public void handle(HttpExchange exchange) {
         String response = "<html><h1>Response</h1></html>";
