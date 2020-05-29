@@ -22,6 +22,11 @@ import com.sun.net.httpserver.HttpHandler;
 import java.io.IOException;
 import java.io.OutputStream;
 
+/**
+ * @author BoogieMonster1O1
+ * This class handles the http request by returning an html string. <br>
+ * Instead of using an html string, a file can be read into a list which can then be converted into a string, which can be used as a much better response. <br>
+ */
 public class Handler implements HttpHandler {
     @Override
     public void handle(HttpExchange exchange) {
